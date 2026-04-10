@@ -1,0 +1,24 @@
+{
+  "source": {
+    "path": "upstream",
+    "channel": "github-head",
+    "defaultBranch": "main",
+    "version": "0.1.37",
+    "rev": "f42b61cb369cf79aeff2db9c184588ad77462817",
+    "siblings": {
+      "frankensqlite": "55762bb52fcc4f5f47b8d4b3d520b7cf6fc10672"
+    }
+  },
+  "package": {
+    "repo": "beads-rust",
+    "version": "0.1.37"
+  },
+  "binary": {
+    "name": "br"
+  },
+  "meta": {
+    "description": "Agent-first issue tracker",
+    "homepage": "https://github.com/Dicklesworthstone/beads_rust",
+    "licenseSpdx": "MIT"
+  }
+}
