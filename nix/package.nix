@@ -1,30 +1,24 @@
-{ bash, lib, makeWrapper, rustPlatform }:
+{ bash, fetchFromGitHub, lib, makeWrapper, runCommand, rustPlatform }:
 
 let
   manifest = builtins.fromJSON (builtins.readFile ./package-manifest.json);
-  sourceTree = lib.cleanSourceWith {
-    src = ../.;
-    filter = path: type:
-      let
-        base = baseNameOf path;
-        excluded = [
-          ".beads"
-          ".git"
-          ".github"
-          ".ntm"
-          "agent_baseline"
-          "result"
-          "sample_beads_db_files"
-          "scripts"
-          "skills"
-          "temp_test"
-          "temp_test_2"
-        ];
-      in
-      !(builtins.elem base excluded
-        || lib.hasSuffix ".png" base
-        || lib.hasSuffix ".webp" base);
+  beadsRustSrc = fetchFromGitHub {
+    owner = manifest.source.owner;
+    repo = manifest.source.repo;
+    rev = manifest.source.rev;
+    hash = manifest.source.hash;
   };
+  frankensqliteSrc = fetchFromGitHub {
+    owner = manifest.source.siblings.frankensqlite.owner;
+    repo = manifest.source.siblings.frankensqlite.repo;
+    rev = manifest.source.siblings.frankensqlite.rev;
+    hash = manifest.source.siblings.frankensqlite.hash;
+  };
+  sourceRoot = runCommand "${manifest.binary.name}-${manifest.source.version}-src" { } ''
+    mkdir -p "$out/beads_rust" "$out/frankensqlite"
+    cp -R ${beadsRustSrc}/. "$out/beads_rust/"
+    cp -R ${frankensqliteSrc}/. "$out/frankensqlite/"
+  '';
   builtBinary = manifest.binary.upstreamName or manifest.binary.name;
   aliasOutputs = manifest.binary.aliases or [ ];
   licenseMap = {
@@ -50,12 +44,12 @@ EOF
 in
 rustPlatform.buildRustPackage {
   pname = manifest.binary.name;
-  version = manifest.package.version;
-  src = sourceTree;
-  sourceRoot = "source/upstream";
+  version = manifest.source.version;
+  src = sourceRoot;
+  sourceRoot = "source/beads_rust";
 
   cargoLock = {
-    lockFile = ../upstream/Cargo.lock;
+    lockFile = sourceRoot + "/beads_rust/Cargo.lock";
     allowBuiltinFetchGit = true;
   };
 
