@@ -6,14 +6,14 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.2.1",
-    "rev": "661d830f6696de2b2b4b4d7f976beca5722c901c",
-    "hash": "sha256-vwLrT2RB2cBHZdv3oQue9BZ4pO+FtAESV8MjbqQ1JbA=",
+    "rev": "11a071aad7a80800df417d5b1b973daef77cb69c",
+    "hash": "sha256-Pmeflw0HZ3sH+5odgZ9O8N5RWC176AwV+TWQZpUtiBc=",
     "siblings": {
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "038f0f466eb5fa2df4de718a90da5f1a3354b45d",
-        "hash": "sha256-YW6SA0s50mGNfr5dE+iLb9P2v8hsYJwx+ukwEkVt9Pw="
+        "rev": "34a149cfda525880197aca95e69ef424c2756558",
+        "hash": "sha256-3IyaCv2Gk1O21cI9ZbN2dZp3PRUIGRt3MgKFeA0w7Zw="
       }
     }
   },
