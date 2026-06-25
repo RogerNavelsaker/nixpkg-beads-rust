@@ -6,8 +6,8 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.2.15",
-    "rev": "4c46fafa64e4c08ca9e3afebbdd52c70b523d058",
-    "hash": "sha256-1VrnvlYOjTrFhNTw6Pm5AAriWAg6+8FlYSo0D3mjA6o=",
+    "rev": "7a84bca21d94f6b2a9595f90298071b891c6afaf",
+    "hash": "sha256-u1QKo3rL4CBWCVy2ZxNeL3AeG1A/nJK7if6pgUs5Gv0=",
     "siblings": {
       "frankensqlite": {
         "owner": "Dicklesworthstone",
