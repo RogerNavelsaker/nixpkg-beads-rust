@@ -6,7 +6,7 @@
     "channel": "github-head",
     "defaultBranch": "main",
     "version": "0.2.16",
-    "rev": "c3c8abfa5514834660b2a03ac39137eafe0c74bc",
+    "rev": "f1a8027efb5cc72716dde1364b37ae0c8bd34fb5",
     "hash": "sha256-9eYiuPti0yYjEiJtvcYPnIbtnPHwgkBmn35f9D49gPI=",
     "siblings": {
       "frankensqlite": {
