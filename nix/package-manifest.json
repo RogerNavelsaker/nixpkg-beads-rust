@@ -5,21 +5,21 @@
     "repo": "beads_rust",
     "channel": "github-head",
     "defaultBranch": "main",
-    "version": "0.2.22",
-    "rev": "d1fb0d3ac48c34156bda5ddd78052c20c5138a5c",
-    "hash": "sha256-fbcDnmtbaswOqNeVIfgUwnHZAfLjspiNL4e67BwFzc0=",
+    "version": "0.3.0",
+    "rev": "52a9f861a8f51ba616d5d3e9e2e5e5d7641f1592",
+    "hash": "sha256-8A4jjKQIGKByemT9PhStplEQLRixsG4BaKgTOTn8dmg=",
     "siblings": {
       "frankensqlite": {
         "owner": "Dicklesworthstone",
         "repo": "frankensqlite",
-        "rev": "9320927e172f67e9a50dd333a8dfc94d9da4a94c",
-        "hash": "sha256-QX2IFqB/5JjFnzzgdcmoU73w4izXSNAUhmCc34EZa5s="
+        "rev": "68273b07cec2083d535b94ed5044fcd27a220757",
+        "hash": "sha256-JjRC3eMUen+5CC6C+5FdxdpdKQsVo22ByyKdPxPlPi8="
       }
     }
   },
   "package": {
     "repo": "beads-rust",
-    "version": "0.2.22"
+    "version": "0.3.0"
   },
   "binary": {
     "name": "br"
