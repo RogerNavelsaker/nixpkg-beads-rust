@@ -49,9 +49,13 @@ rustPlatform.buildRustPackage {
   sourceRoot = ".";
 
   cargoLock = {
-    lockFile = sourceRoot + "/Cargo.lock";
+    lockFile = ./../upstream/Cargo.lock;
     allowBuiltinFetchGit = true;
   };
+
+  prePatch = ''
+    cp ${./../upstream/Cargo.lock} Cargo.lock
+  '';
 
   cargoBuildFlags =
     (lib.optionals (manifest.binary ? package) [ "-p" manifest.binary.package ])
