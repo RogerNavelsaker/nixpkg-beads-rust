@@ -17,8 +17,6 @@ let
   sourceRoot = runCommand "${manifest.binary.name}-${manifest.source.version}-src" { } ''
     mkdir -p "$out/frankensqlite"
     cp -R ${beadsRustSrc}/. "$out/"
-    # The upstream archive omits Cargo.lock, but Nix requires it for vendoring.
-    cp ${./../upstream/Cargo.lock} "$out/Cargo.lock"
     cp -R ${frankensqliteSrc}/. "$out/frankensqlite/"
   '';
   builtBinary = manifest.binary.upstreamName or manifest.binary.name;
@@ -51,9 +49,13 @@ rustPlatform.buildRustPackage {
   sourceRoot = ".";
 
   cargoLock = {
-    lockFile = sourceRoot + "/Cargo.lock";
+    lockFile = ./../upstream/Cargo.lock;
     allowBuiltinFetchGit = true;
   };
+
+  prePatch = ''
+    cp ${./../upstream/Cargo.lock} Cargo.lock
+  '';
 
   cargoBuildFlags =
     (lib.optionals (manifest.binary ? package) [ "-p" manifest.binary.package ])
