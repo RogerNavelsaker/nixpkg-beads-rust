@@ -59,7 +59,7 @@ rustPlatform.buildRustPackage {
 
   cargoBuildFlags =
     (lib.optionals (manifest.binary ? package) [ "-p" manifest.binary.package ])
-    ++ [ "--bin=${builtBinary}" ];
+    ++ [ "--bin=${builtBinary}" "--ignore-rust-version" ];
 
   nativeBuildInputs = [ makeWrapper ];
   doCheck = false;
