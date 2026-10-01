@@ -15,8 +15,8 @@ let
     hash = manifest.source.siblings.frankensqlite.hash;
   };
   sourceRoot = runCommand "${manifest.binary.name}-${manifest.source.version}-src" { } ''
-    mkdir -p "$out/beads_rust" "$out/frankensqlite"
-    cp -R ${beadsRustSrc}/. "$out/beads_rust/"
+    mkdir -p "$out/frankensqlite"
+    cp -R ${beadsRustSrc}/. "$out/"
     cp -R ${frankensqliteSrc}/. "$out/frankensqlite/"
   '';
   builtBinary = manifest.binary.upstreamName or manifest.binary.name;
@@ -46,10 +46,10 @@ rustPlatform.buildRustPackage {
   pname = manifest.binary.name;
   version = manifest.source.version;
   src = sourceRoot;
-  sourceRoot = "beads_rust";
+  sourceRoot = ".";
 
   cargoLock = {
-    lockFile = sourceRoot + "/beads_rust/Cargo.lock";
+    lockFile = sourceRoot + "/Cargo.lock";
     allowBuiltinFetchGit = true;
   };
 
