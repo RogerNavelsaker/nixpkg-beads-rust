@@ -46,7 +46,7 @@ rustPlatform.buildRustPackage {
   pname = manifest.binary.name;
   version = manifest.source.version;
   src = sourceRoot;
-  sourceRoot = "beads_rust";
+  sourceRoot = "source/beads_rust";
 
   cargoLock = {
     lockFile = sourceRoot + "/beads_rust/Cargo.lock";
