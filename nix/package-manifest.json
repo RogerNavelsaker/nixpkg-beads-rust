@@ -7,7 +7,7 @@
     "defaultBranch": "main",
     "version": "0.7.3",
     "rev": "77ff1da31649814849838657fa2c1afc56570bd9",
-    "hash": "sha256-F45H3MA91ZiFlBrzK24TgaKfw0P1cwl8WSNOu4T7M2I="
+    "hash": "sha256-F45H3MA91ZiFlBrzK24TgaKfw0P1cwl8WSNOu4T7M2I=",
     "siblings": {
       "frankensqlite": {
         "owner": "Dicklesworthstone",
